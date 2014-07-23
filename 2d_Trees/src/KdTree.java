@@ -22,17 +22,19 @@ public class KdTree {
 
     public void insert(Point2D p) {
     // add the point p to the set (if it is not already in the set)
-        
+        if (!points.contains(p)) points.add(p);
     }
 
     public boolean contains(Point2D p) {
     // does the set contain the point p?
-
+        return points.contains(p);
     }
 
     public void draw() {
     // draw all of the points to standard draw
-
+        for (Point2D point : points) {
+            point.draw();
+        }
     }
 
     public Iterable<Point2D> range(RectHV rect) {
