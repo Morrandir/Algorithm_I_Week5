@@ -59,7 +59,7 @@ public class PointSET {
                                       Double.POSITIVE_INFINITY);
 
         for(Point2D point : points) {
-            if (point.distanceTo(p) < nearest.distanceTo(p)) {
+            if (point.distanceSquaredTo(p) < nearest.distanceSquaredTo(p)) {
                 nearest = point;
             }
         }
