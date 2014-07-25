@@ -3,7 +3,7 @@
  */
 public class PointSET {
 
-    SET<Point2D> points;
+    private SET<Point2D> points;
 
     public PointSET() {
     // construct an empty set of points
@@ -55,10 +55,9 @@ public class PointSET {
 
     public Point2D nearest(Point2D p) {
     // a nearest neighbor in the set to p; null if set is empty
-        Point2D nearest = new Point2D(Double.POSITIVE_INFINITY,
-                                      Double.POSITIVE_INFINITY);
+        Point2D nearest = points.min();
 
-        for(Point2D point : points) {
+        for (Point2D point : points) {
             if (point.distanceSquaredTo(p) < nearest.distanceSquaredTo(p)) {
                 nearest = point;
             }
